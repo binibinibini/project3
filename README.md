@@ -18,8 +18,72 @@
 
 [참고한 논문](https://drive.google.com/drive/folders/1GK4rzccEKPsFuCcLOu4epIGrE5LShO8m?usp=drive_link)
 
-[전체 코드]()
+[웹 시연 영상](https://drive.google.com/file/d/1SkuHXsg7MpjtQxo13PyvC6Rwkds4LHaY/view?usp=drive_link)
+
+[전체 코드](https://github.com/binibinibini/project3.git)
+
+## 3. 사용 기술<br>
+YOLO(Roboflow), OpenCV, Numpy, Python, Streamlit, GPT 기반 리포트 생성
+
+
+## 4. 역할 <br>
+로보플로우 객체 라벨링<br>
+
+YOLO 학습 코드 작성 (?)<br>
+
+GPT 프롬프트 로직 구현<br>
+
+UI/UX 설계 및 시스템 연동<br>
 
 
 
 
+
+
+
+5️⃣ 데이터셋 및 라벨링 과정
+
+총 수집량 → 정제 → 증강 → 최종 학습 데이터 수
+
+라벨링 기준 정립 과정과 클래스 종류
+
+데이터 불균형 해결 노력
+
+Roboflow 사용법 요약(캡처 이미지 있으면 굿!)
+
+6️⃣ 인체공학 가이드라인 설명 (대표 2~3개만 상세하게)
+
+Cornell, 사이즈코리아 근거 명시
+
+비율 기반 계산 방식이 핵심 포인트
+
+JSON 형태 결과 예시 첨부
+
+7️⃣ 모델 성능
+
+mAP, 각 클래스별 정확도 그래프
+
+Before/After 개선 시각 자료
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 5. 결과 & 성과 <br>
+정확도<br>
+75.9 <br>
+
+서비스 흐름<br>
+<img width="1071" height="320" alt="image" src="https://github.com/user-attachments/assets/ccd415cf-4252-4a54-bcd9-772dae921371" />
+
+
+[발표자료](https://docs.google.com/presentation/d/1MKx2OHbTf_ViDdTwbASfQeyOhodeTja7zB3pLnXR_uc/edit?usp=drive_link)
