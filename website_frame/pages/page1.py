@@ -1,4 +1,3 @@
-# pages/page1.py
 import os
 import base64
 import streamlit as st
@@ -99,3 +98,4 @@ def show_opening_page():
         unsafe_allow_html=True,
 
     )
+
