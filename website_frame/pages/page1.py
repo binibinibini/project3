@@ -5,9 +5,7 @@ import streamlit as st
 
 def show_opening_page():
     """
-    인트로 페이지 렌더링
-    - 배경 이미지는 프로젝트 루트의 project 폴더에서 찾음
-    - 이미지가 없으면 경고 표시 및 기본 스타일 유지
+    이미지가 없으면 경고 표시 및 기본 스타일 유지
     """
     def get_base64_of_bin_file(bin_file: str):
         try:
@@ -51,10 +49,8 @@ def show_opening_page():
             background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("data:image/png;base64,{bin_str}");
             # background-size: cover;
             
-            /* [수정] cover(덮기)에서 contain(포함하기)으로 변경 */
             background-size: contain; 
             
-            /* [수정] 이미지가 화면보다 작을 때 반복되지 않도록 설정 */
             background-repeat: no-repeat;
             
             background-position: center;
@@ -71,7 +67,7 @@ def show_opening_page():
 
     # app_root: pages 폴더 기준 한 단계 위 (website_frame)
     app_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    # 실제 이미지 파일명에 맞춰 수정하세요
+    
     image_path_candidates = [
         os.path.join(app_root, "project", "곰돌이.png"),
         os.path.join(app_root, "project", "곰돌이1.png"),
@@ -101,4 +97,5 @@ def show_opening_page():
         </div>
         """,
         unsafe_allow_html=True,
+
     )
