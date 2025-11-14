@@ -1,9 +1,7 @@
-# pages/page2.py
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 import tempfile, os, base64
 
-# inference_sdk는 사용 환경에 따라 설치/대체 필요
 try:
     from inference_sdk import InferenceHTTPClient
 except Exception:
@@ -17,8 +15,6 @@ def run_monitor_detection():
     st.markdown(" ")
     st.markdown("#### 💡 올바른 사진 촬영 가이드")
     st.info("정확한 분석을 위해, 아래 가이드를 참고하여 책상 사진을 찍어주세요.")
-
-
 
 
     col1, col2 = st.columns([1.0, 1.0])  # 텍스트와 이미지 영역 비율
@@ -35,9 +31,6 @@ def run_monitor_detection():
         )
 
     with col2:
-        # [추가] 사용자가 요청한 '사진 넣을 자리' (Placeholder)
-        # 나중에 여기에 st.image("guide_image.png") 코드를 넣으시면 됩니다.
-
         st.markdown("<div style='margin-top: 40px;'></div>", unsafe_allow_html=True)
 
 
@@ -48,6 +41,7 @@ def run_monitor_detection():
         except FileNotFoundError:
             st.warning("가이드라인 이미지를 찾을 수 없습니다.")
             st.markdown(f"경로 확인 필요: `{image_path}`")
+            
             # 이미지를 못찾을 경우를 대비한 Placeholder
             with st.container(border=True, height=200):
                 st.markdown(
