@@ -1,4 +1,3 @@
-# pages/page3.py
 import streamlit as st
 
 
@@ -33,7 +32,7 @@ def user_info_form():
 
         col1, col2 = st.columns(2)
         with col1:
-            # `key`를 지정하여 final_app.py에서 값을 읽을 수 있게 함
+            # key를 지정하여 final_app.py에서 값을 읽을 수 있게 함
             st.radio("성별",
                      options=('여성', '남성'),
                      horizontal=True,
