@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 """
-인체공학적 책상 개선 가이드 (Streamlit) - 단일 파일 버전
+인체공학적 책상 개선 가이드 (Streamlit)
 
 - 모든 분석 로직과 Streamlit UI가 하나의 파일에 포함되어 있습니다.
-- [수정] 5단계의 상세 분석 리포트를 사용자 친화적인 한글로 번역하여 보여줍니다.
+- 5단계의 상세 분석 리포트를 사용자 친화적인 한글로 번역하여 보여줍니다.
 - 4단계 분석 후 AI 조언까지 자동으로 생성하여 5단계에서 통합된 결과를 보여줍니다.
 - 메타데이터 기반 페이지 로딩
 - OpenAI GPT 연동 (환경변수 OPENAI_API_KEY 필요)
@@ -748,4 +747,5 @@ elif page == 5:
     st.markdown(final_result)
 
     if st.button("다시 분석하기", key="retry_p5", use_container_width=True):
+
         handle_retry()
