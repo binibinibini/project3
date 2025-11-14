@@ -3,6 +3,7 @@
 ## 1. 사용자 맞춤형 인체공학 솔루션<br>
 
 사용자의 책상 환경을 촬영한 사진 한 장으로 잘못된 작업 환경을 진단하고, 인체공학적 개선 가이드를 제공하는 서비스입니다.<br>
+<br>
 
 ## 2. 프로젝트 개요
 
@@ -21,77 +22,70 @@
 [웹 시연 영상](https://drive.google.com/file/d/1SkuHXsg7MpjtQxo13PyvC6Rwkds4LHaY/view?usp=drive_link)
 
 [전체 코드](https://github.com/binibinibini/project3.git)
+<br>
 
 ## 3. 사용 기술<br>
 YOLO(Roboflow), OpenCV, Numpy, Python, Streamlit, GPT 기반 리포트 생성
+<br>
 
 
 ## 4. 역할 <br>
 
 Roboflow 객체 라벨링<br>
-- Roboflow를 사용해 책상 이미지의 객체 라벨링을 진행했습니다. 초기 라벨링 후 객체별 정확도를 검증하며 성능이 낮은 클래스는 추가 데이터를 수집해 보강했고, 반복 학습에도 개선이 어려운 객체는 카테고리에서 제외해 최종 라벨링 기준을 확립했습니다. 이 과정을 통해 데이터 품질과 모델 신뢰도를 단계적으로 강화했습니다. <br>
+- Roboflow를 사용해 초기 라벨링 후 객체별 정확도를 확인하며 성능이 낮은 클래스는 추가 데이터를 수집해 증강 및 보강 학습 진행
+- 여러 차례 학습에도 개선되지 않는 객체는 제거하여 최종 라벨링 기준을 정교화
 
-YOLO 학습 코드 작성 <br>
-- 모델 구조와 학습 프로세스를 이해하기 위해 학습 코드를 작성하고, 에포크를 조장하며 성능 변화를 실험.
-- 내가 쓴거 : 성능 변화를 실험하고 어떤걸 깨달았는지 적으면 좋을 듯. 그리고 학습 코드를 roboflow에서 들고와서 실행함.
-- 파이프라인을 이해하기 위해라는데 우리가 짠 코드 자체가 로보플로우의 api를 사용해서 학습한걸 들고오는 코드야
+
+YOLO 학습 실험 및 성능 검증 <br>
+- YOLO 모델의 성능을 확인하기 위해 epoch, 이미지 사이즈 등 하이퍼파라미터를 조정하며 성능 변화를 실험
+- 분석 결과를 바탕으로 일부 클래스는 데이터 추가 수집 또는 클래스 제외를 검토하며 전체 라벨링 기준을 조정했고, 데이터셋 품질을 개선하는 데 기여함
+
 
 GPT 프롬프트 로직 구현<br>
-- YOLO와 가이드라인 분석 결과를 JSON 구조로 받아 해석하는 사용자 맞춤형 분석 리포트를 생성하는 프롬프트 구조 설계했습니다.
+- YOLO와 Guideline 코드가 생성한 분석 결과를 기반으로, GPT가 사용자 맞춤형 인체공학 리포트를 생성하도록 프롬프트를 설계
+
 
 UI/UX 설계 및 시스템 연동<br>
-- Streamlit 기반 UI를 설계하고 YOLO-가이드라인-GPT를 연결하여 전체 흐름을 구축
-- 조원들이 각자의 페이지를 맡아서 디자인 없이 만들었어. 내가 맡은 페이지는 사용자의 정보 입력 받는 부분이고, 조원들이 각각 만든 페이지들을 한 조원이 연결 시켰고,나는 전체적인 디자인을 했고(직접 실행하면서 추가할 부분이나 버튼 위치 같은거 수정)을 했는데 어떤식으로 쓰면 좋을까?
+- Streamlit 기반 전체 사용자 흐름 설계 및 사용성 개선
+- 페이지 간 이동, 버튼 위치, 정보 배치 등 UI/UX 전반을 재정비
+- YOLO-인체공학적 가이드라인 코드-GPT 리포트 생성 흐름을 하나의 통합된 파이프라인으로 연결해 서비스 형태로 완성
+<br>
+
+## 5. 데이터셋 및 라벨링 과정 <br>
+
+최종 학습 데이터 수<br>
+3,460장
+<br>
+
+라벨링 객체<br>
+screen, monitor support, laptop, keyboard, mouse, desk lamp, window, wrist rest
+<br>
+
+Roboflow 라벨링<br>
+<img width="374" height="199" alt="image" src="https://github.com/user-attachments/assets/d040a7d8-f0cc-4625-91bd-c7566401de2c" />
+<br>
 
 
+## 6. 인체공학 가이드라인 <br>
+
+- 각종 인체 공학 관련 사이트를 조사하며, 비율 기반의 인체공학적 계산법 생성
+
+<img width="1196" height="484" alt="image" src="https://github.com/user-attachments/assets/92291017-fa70-47d9-81aa-a293e59af4f3" />
+
+<br>
+
+## 7. 결과 <br>
+
+객체별 정확도
+<img width="1196" height="550" alt="image" src="https://github.com/user-attachments/assets/8b70f5c1-533a-4413-8ffc-0ca762bae597" />
 
 
-
-
-
-5️⃣ 데이터셋 및 라벨링 과정
-
-총 수집량 → 정제 → 증강 → 최종 학습 데이터 수
-
-라벨링 기준 정립 과정과 클래스 종류
-
-데이터 불균형 해결 노력
-
-Roboflow 사용법 요약(캡처 이미지 있으면 굿!)
-
-6️⃣ 인체공학 가이드라인 설명 (대표 2~3개만 상세하게)
-
-Cornell, 사이즈코리아 근거 명시
-
-비율 기반 계산 방식이 핵심 포인트
-
-JSON 형태 결과 예시 첨부
-
-7️⃣ 모델 성능
-
-mAP, 각 클래스별 정확도 그래프
-
-Before/After 개선 시각 자료
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 5. 결과 & 성과 <br>
-정확도<br>
+전체 최종 정확도<br>
 75.9 <br>
 
 서비스 흐름<br>
 <img width="1071" height="320" alt="image" src="https://github.com/user-attachments/assets/ccd415cf-4252-4a54-bcd9-772dae921371" />
 
+<br>
 
 [발표자료](https://docs.google.com/presentation/d/1MKx2OHbTf_ViDdTwbASfQeyOhodeTja7zB3pLnXR_uc/edit?usp=drive_link)
