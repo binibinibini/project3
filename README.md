@@ -21,9 +21,16 @@ __1. 프로젝트 개요__
 <br>
 
 __2. 사용 기술__
-YOLO(Roboflow), OpenCV, Numpy, Python, Streamlit, GPT 기반 리포트 생성
-<br>
+- 데이터 수집 : Flickr 및 Google API 활용 이미지 크롤링
+- 환경 : PyCharm
+- 모델 : YOLO
+- 모델 학습 : Roboflow
+- 모델 기반 : OpenAI GPT-3.5 Turbo
+- 백엔드/서버 : Python
+- 프론트엔드 : Streamlit
+- 데이터베이스 : Streamlit Session State
 
+<br>
 
 __3. 역할__
 
