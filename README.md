@@ -7,17 +7,10 @@ __1. 프로젝트 개요__
 - 개발 배경 및 필요성 : 재택근무의 일상화로 평균 근무 시간이 지속적으로 증가함에 따라, 많은 현대인이 하루의 절반 이상을 책상 앞에서 보내고 있습니다. 이 과정에서 잘못된 자세와 비규격 업무 환경에 노출될 위험이 커지고 있습니다. 이로 인해 5년 사이 VDT 증후군 환자가 38% 증가하는 등 거북목과 어깨 통증을 호소하는 사례가 급격히 늘고 있지만, 대다수의 사람들은 개인의 감에 의존해 환경을 개선하려 합니다. 이 서비스는 한국인 인체 치수 데이터와 인체공학 계산 로직을 활용하였습니다. 사용자의 신체 조건(키, 성별)에 최적화된 모니터 높이와 시청 거리를 계산하여 제공함으로써, 누구나 쉽게 인체공학적인 작업 환경을 조성할 수 있도록 돕고자 개발되었습니다. 
 <br>
 
-[카테고리 목록](https://docs.google.com/spreadsheets/d/1tteyq5jXOqYlGVjmUWLDkb59NdvOc6gyuN06nWfIHwU/edit?usp=drive_link)
-
-[데이터 수집](https://drive.google.com/drive/folders/1Cpmg6iK_5-4j9rLjQ5uu2IoLHG59iPYU?usp=drive_link)
-
 [모니터 높이 공식 산출 데이터](https://docs.google.com/spreadsheets/d/1CKce8DtY3HxBoi0hGiNBAbWmlRsmGDXbWE2uwdYXi98/edit?usp=drive_link)
 
 [참고한 논문](https://drive.google.com/drive/folders/1GK4rzccEKPsFuCcLOu4epIGrE5LShO8m?usp=drive_link)
 
-[웹 시연 영상](https://drive.google.com/file/d/1SkuHXsg7MpjtQxo13PyvC6Rwkds4LHaY/view?usp=drive_link)
-
-[전체 코드](https://github.com/binibinibini/project3.git)
 <br>
 
 __2. 사용 기술__
@@ -68,6 +61,10 @@ __4. 객체 인식 결과__
 __5. 웹 서비스 흐름도__
 이미지 업로드 -> 객체 인식 -> 사용자 정보 입력 -> 분석 결과 & 가이드 제공
 <img width="900" height="300" alt="image" src="https://github.com/user-attachments/assets/ccd415cf-4252-4a54-bcd9-772dae921371" />
+
+<br>
+
+[웹 시연 영상](https://drive.google.com/file/d/1SkuHXsg7MpjtQxo13PyvC6Rwkds4LHaY/view?usp=drive_link)
 
 <br>
 
