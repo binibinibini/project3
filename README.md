@@ -63,6 +63,7 @@ __4. 객체 인식 결과__
   <img width="385" height="309" alt="image" src="https://github.com/user-attachments/assets/853678f5-8779-4036-b128-9df76f411891" />
 
 <br>
+<br>
 
 __5. 웹 서비스 흐름도__
 이미지 업로드 -> 객체 인식 -> 사용자 정보 입력 -> 분석 결과 & 가이드 제공
