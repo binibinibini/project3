@@ -32,7 +32,45 @@ __2. 사용 기술__
 
 <br>
 
-__3. 역할__
+__3. 모델 개발 및 학습__
+- 모델 선정 근거
+  - YOLO : 사용자의 책상 사진에서 여러 객체를 실시간으로 감지해야 합니다. 정확도뿐만 아니라 빠른 처리 속도가 필수적이므로, 임베디드나 웹 환경에서도 효율적인 성능을 보이는 YOLO 모델을 선정하였습니다.
+
+  <img width="900" height="400" alt="image" src="https://github.com/user-attachments/assets/dff85cc3-0832-4893-b607-109bf4bc7e8a" />
+
+
+  - OpenAI GPT-3.5 Turbo : 계산한 수치 데이터를 사용자가 이해하기 쉬운 조언 형태의 자연어로 변환하기 위해 사용하였습니다. 
+
+
+
+- 데이터셋 수집<br>
+  Flickr, Google API를 통해 약 5600장의 실제 사용자들이 사용하는 다양한 데스크 이미지를 수집하였습니다.
+
+- 데이터 전처리<br>
+  - 라벨링 : Roboflow를 활용하여 인체공학 분석에 필요한 8가지 클래스(screen, monitor support, laptop, keyboard, mouse, desk lamp, window, wrist rest)를 정의하고 라벨링을 수행했습니다.
+
+- 데이터 증강<br>
+  - 밝기(Brightness), 노이즈(Noise), 흐림(Blur) 처리를 통해 다양한 실내 조명 조건에서도 인식을 하도록했습니다.
+  - 뒤집기, 회전을 적용하여 사용자가 사진을 여러 측면에서 찍더라도 정확하게 인식하도록 학습시켰습니다.
+ 
+- 모델 성능<br>
+초기 모델 대비 데이터 증강 및 라벨링 기준 고도화를 거쳐 mAP50 지표를 약 24% 향상시켰습니다. 최종 모델 기준 75.9%를 달성하여, 다양한 데스크 환경에서도 안정적인 객체 탐지 성능을 확보했습니다.
+
+<br>
+
+__4. 객체 인식 결과__
+
+  <img width="385" height="309" alt="image" src="https://github.com/user-attachments/assets/853678f5-8779-4036-b128-9df76f411891" />
+
+<br>
+
+__5. 웹 서비스 흐름도__
+이미지 업로드 -> 객체 인식 -> 사용자 정보 입력 -> 분석 결과 & 가이드 제공
+<img width="900" height="300" alt="image" src="https://github.com/user-attachments/assets/ccd415cf-4252-4a54-bcd9-772dae921371" />
+
+<br>
+
+__6. 역할__
 
 Roboflow 객체 라벨링<br>
 - Roboflow를 사용해 초기 라벨링 후 객체별 정확도를 확인하며 성능이 낮은 클래스는 추가 데이터를 수집해 증강 및 보강 학습 진행
@@ -54,41 +92,10 @@ UI/UX 설계 및 시스템 연동<br>
 - YOLO-인체공학적 가이드라인 코드-GPT 리포트 생성 흐름을 하나의 통합된 파이프라인으로 연결해 서비스 형태로 완성
 <br>
 
-__4. 데이터셋 및 라벨링 과정__
 
-최종 학습 데이터 수<br>
-3,460장
-<br>
-
-라벨링 객체<br>
-screen, monitor support, laptop, keyboard, mouse, desk lamp, window, wrist rest
-<br>
-
-Roboflow 라벨링<br>
-<img width="374" height="199" alt="image" src="https://github.com/user-attachments/assets/d040a7d8-f0cc-4625-91bd-c7566401de2c" />
-<br>
-
-
-__5. 인체공학 가이드라인__
+__7. 인체공학 가이드라인__
 
 - 각종 인체 공학 관련 사이트를 조사하며, 비율 기반의 인체공학적 계산법 생성
 
 <img width="1196" height="484" alt="image" src="https://github.com/user-attachments/assets/92291017-fa70-47d9-81aa-a293e59af4f3" />
 
-<br>
-
-__6. 결과__
-
-객체별 정확도
-<img width="1196" height="550" alt="image" src="https://github.com/user-attachments/assets/8b70f5c1-533a-4413-8ffc-0ca762bae597" />
-
-
-전체 최종 정확도<br>
-75.9 <br>
-
-서비스 흐름<br>
-<img width="1071" height="320" alt="image" src="https://github.com/user-attachments/assets/ccd415cf-4252-4a54-bcd9-772dae921371" />
-
-<br>
-
-[발표자료](https://docs.google.com/presentation/d/1MKx2OHbTf_ViDdTwbASfQeyOhodeTja7zB3pLnXR_uc/edit?usp=drive_link)
