@@ -32,7 +32,7 @@ __3. 모델 개발 및 학습__
 
 
 - 데이터셋 수집<br>
-  Flickr, Google API를 통해 약 5600장의 실제 사용자들이 사용하는 다양한 데스크 이미지를 수집하였습니다.
+  - Flickr, Google API를 통해 약 5600장의 실제 사용자들이 사용하는 다양한 데스크 이미지를 수집하였습니다.
 
 - 데이터 전처리<br>
   - 라벨링 : Roboflow를 활용하여 인체공학 분석에 필요한 8가지 클래스(screen, monitor support, laptop, keyboard, mouse, desk lamp, window, wrist rest)를 정의하고 라벨링을 수행했습니다.
